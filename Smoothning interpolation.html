@@ -143,6 +143,20 @@
                     .attr("fill","none")
                     .attr("stroke",color)
                     .attr("d",line1) 
+
+                var line2 = d3.line()
+                    .x(d => x(d.date))
+                    .y(d => y(d[propertyName]))
+                    // .curve(d3.curveBasis)
+                    // .curve(d3.curveCardinal)
+                    .curve(d3.curveMonotoneX)  //closest to linear smoothning
+                    ; 
+
+                dataGroup.append("path")
+                    .data([data]) 
+                    .attr("fill","none")
+                    .attr("stroke","red")
+                    .attr("d",line2)    
             } 
         }              
     </script>

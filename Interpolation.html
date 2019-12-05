@@ -135,7 +135,7 @@
                 var line1 = d3.line()
                     .x(d => x(d.date))
                     .y(d => y(d[propertyName]))
-                    .curve(d3.curveLinear)
+                    .curve(d3.curveStepAfter)
                     ; 
 
                 dataGroup.append("path")
