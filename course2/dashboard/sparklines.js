@@ -43,7 +43,7 @@ function buildLine(ds) {
 	        //show header
 	        function showHeader(ds) {
 	            d3.select("#bottomLeft").append("h2")
-	                .text(ds.category + " Sales Trend (2013)");
+	                .text(ds.category + " Sales Trend (2019)");
 	        }
 	        
 	        
