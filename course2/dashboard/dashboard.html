@@ -155,7 +155,21 @@
 
     					//sort values for color legend
 
+						var colorBefore;
+
                         var barLegendData=[];
+
+						function getUnique(array){
+							var uniqueArray = [];
+							
+							// Loop through array values
+							for(i=0; i < array.length; i++){
+								if(uniqueArray.indexOf(array[i]) === -1) {
+									uniqueArray.push(array[i]);
+								}
+							}
+							return uniqueArray;
+						}
 
                         data.forEach(function(dv){
 
@@ -164,10 +178,11 @@
                         	if (val) {barLegendData.push(val);}
 
                         });
+						
 
                         barLegendData.sort(function(a,b){ return a-b;});
 
-                        // console.log(barLegendData);
+                        console.log("barLegendData " + barLegendData);
 
                         var header = d3.select("#barChartLegend")
 				    				.attr("width", 200)

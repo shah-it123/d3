@@ -41,6 +41,8 @@
 
             // var interval = d3.interval(x => d3.json("http://localhost:61167/api/Data/GetJsonCircles").then(values => renderSortedValues(values)), 1000);
 
+            console.log(values);
+
             function renderSortedValues(values) {
                 values = values.sort(function (a, b) {
                     return a - b;
@@ -180,28 +182,28 @@
                     currentX += deltaX;
                 }
 
-                function drawProportionalCircle(radius, g) {
-                    drawACircle(Math.sqrt(radius), g);
+                // function drawProportionalCircle(radius, g) {
+                //     drawACircle(Math.sqrt(radius), g);
 
-                    drawLabel(g, radius);
+                //     drawLabel(g, radius);
 
-                    currentX += deltaX;
-                }
+                //     currentX += deltaX;
+                // }
 
-                function drawRectangle(g, value) {
-                    g.append("rect")
-                        .attr("fill", "red")
-                        .attr("height", value)
-                        .attr("width", 5)
-                        .attr("x", currentX)
-                        .attr("y", currentY)
-                        .attr("transform-origin", currentX + "," + currentY)
-                        ;
+                // function drawRectangle(g, value) {
+                //     g.append("rect")
+                //         .attr("fill", "red")
+                //         .attr("height", value)
+                //         .attr("width", 5)
+                //         .attr("x", currentX)
+                //         .attr("y", currentY)
+                //         .attr("transform-origin", currentX + "," + currentY)
+                //         ;
 
-                    drawLabel(g, value);
+                //     drawLabel(g, value);
 
-                    currentX += deltaX;
-                }
+                //     currentX += deltaX;
+                // }
             }
 		</script>
 	</body>
